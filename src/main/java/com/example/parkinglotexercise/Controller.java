@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 public class Controller {
 
     private ParkingLotFactory parkingLotFactory = new ParkingLotFactory();
-    private IParkingLot activeParkingLot = parkingLotFactory.createLot("1");
+    private IParkingLot activeParkingLot = parkingLotFactory.createLot(ParkingLotType.DEFAULT);
     private ParkingLotView parkingView;
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
@@ -44,13 +44,13 @@ public class Controller {
     }
 
     private void createLotToggle(){
-        parkingView.getDefaultLot().setOnAction(e-> {activeParkingLot = parkingLotFactory.createLot("1");
+        parkingView.getDefaultLot().setOnAction(e-> {activeParkingLot = parkingLotFactory.createLot(ParkingLotType.DEFAULT);
             parkingView.getRules().setText(activeParkingLot.getRules());} );
 
-        parkingView.getLongTermLot().setOnAction(e->{activeParkingLot = parkingLotFactory.createLot("2");
+        parkingView.getLongTermLot().setOnAction(e->{activeParkingLot = parkingLotFactory.createLot(ParkingLotType.LONGTERM);
             parkingView.getRules().setText(activeParkingLot.getRules());});
 
-        parkingView.getFirstClassLot().setOnAction(e->{activeParkingLot = parkingLotFactory.createLot("3");
+        parkingView.getFirstClassLot().setOnAction(e->{activeParkingLot = parkingLotFactory.createLot(ParkingLotType.FIRSTCLASS);
             parkingView.getRules().setText(activeParkingLot.getRules());});
     }
 }
