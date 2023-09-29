@@ -6,6 +6,5 @@ public interface IParkingLot {
 
     List<Integer> getCharge();
     void feeCalculator(Ticket ticket);
-
     String getRules();
 }

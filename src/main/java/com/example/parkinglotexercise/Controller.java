@@ -13,6 +13,7 @@ public class Controller {
     public Controller(ParkingLotView parkingView){
         this.parkingView = parkingView;
         parkingView.getRules().setText(activeParkingLot.getRules());
+        createLotToggle();
         createCalculateButton();
     }
 
@@ -40,10 +41,15 @@ public class Controller {
                 parkingView.displayCharge("Invalid input:\n Please enter correct time format.");
             }
         });
+    }
+
+    private void createLotToggle(){
         parkingView.getDefaultLot().setOnAction(e-> {activeParkingLot = parkingLotFactory.createLot("1");
-        parkingView.getRules().setText(activeParkingLot.getRules());} );
+            parkingView.getRules().setText(activeParkingLot.getRules());} );
+
         parkingView.getLongTermLot().setOnAction(e->{activeParkingLot = parkingLotFactory.createLot("2");
             parkingView.getRules().setText(activeParkingLot.getRules());});
+
         parkingView.getFirstClassLot().setOnAction(e->{activeParkingLot = parkingLotFactory.createLot("3");
             parkingView.getRules().setText(activeParkingLot.getRules());});
     }
