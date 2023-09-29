@@ -12,8 +12,11 @@ public class DefaultParkingLot implements IParkingLot {
     private String rules;
 
     {
-        rules = "1.  $2 per hour\n2.  Always round up (even 1 minute rounds up to the next hour!)\n" +
-                "3. Maximum charge per day is $15.\n 4.  On the first day, if you leave within half an hour of arriving there is no charge";
+        rules = """
+                1.  $2 per hour
+                2.  Always round up (even 1 minute rounds up to the next hour!)
+                3. Maximum charge per day is $15.
+                4.  On the first day, if you leave within half an hour of arriving there is no charge""";
     }
 
     @Override

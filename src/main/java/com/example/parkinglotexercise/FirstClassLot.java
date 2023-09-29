@@ -11,8 +11,11 @@ public class FirstClassLot implements IParkingLot{
 
     private String rules;
 
-    {rules = "1. Parking costs $100 per hour\n" + "2. The max cost per day is $1200\n"
-    + "3. Minutes are rounded up\n" + "4. Penalty charge of $5000/day for staying more than a week";}
+    {rules = """
+            1. Parking costs $100 per hour
+            2. The max cost per day is $1200
+            3. Minutes are rounded up
+            4. Penalty charge of $5000/day for staying more than a week""";}
 
     @Override
     public List<Integer> getCharge() {
